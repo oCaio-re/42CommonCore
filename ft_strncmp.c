@@ -6,11 +6,9 @@
 /*   By: ocaio-re <ocaio-re@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/04 13:01:29 by ocaio-re          #+#    #+#             */
-/*   Updated: 2023/10/04 13:01:31 by ocaio-re         ###   ########.fr       */
+/*   Updated: 2023/10/04 15:35:29 by ocaio-re         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-//#include <stdio.h>
 
 int	ft_strncmp(char *s1, char *s2, unsigned int n)
 {
@@ -31,7 +29,7 @@ int	ft_strncmp(char *s1, char *s2, unsigned int n)
 	}
 	return (0);
 }
-/*
+/*#include <stdio.h>
 int	main()
 {
 	printf("%d\n", ft_strncmp("caio", "caioba", 7)); // -1

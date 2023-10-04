@@ -6,21 +6,25 @@
 /*   By: ocaio-re <ocaio-re@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/04 12:35:33 by ocaio-re          #+#    #+#             */
-/*   Updated: 2023/10/04 14:57:58 by ocaio-re         ###   ########.fr       */
+/*   Updated: 2023/10/04 15:32:56 by ocaio-re         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void    ft_toupper(char *str)
+char    ft_toupper(char c)
 {
-    int i;
-
-    i = 0;
-    while (str[i])
+    if(c >= 'a' && c <= 'z')
     {
-        if(str[i] >= 'a' && str[i] <= 'z')
-        {
-            str[i] -= 32;
-        }
-        i++;
-        }
+        return(c -= 32);
+    }
+    else
+        return(c);    
 }
+
+/* #include <stdio.h>
+#include <ctype.h>
+
+int main(int argc, char *argv[])
+{
+    printf("%c\n", ft_toupper(argv[1][0]));
+    printf("%c\n", toupper(argv[1][0]));
+} */
