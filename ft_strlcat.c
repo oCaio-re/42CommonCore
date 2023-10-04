@@ -1,4 +1,16 @@
-#include "ft_strlen.c"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ocaio-re <ocaio-re@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/10/04 12:23:24 by ocaio-re          #+#    #+#             */
+/*   Updated: 2023/10/04 12:23:25 by ocaio-re         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#define SIZE sizeof(src) / sizeof(char)
 
 unsigned int	ft_strlcat(char *dest, char *src, unsigned int size)
 {
@@ -14,7 +26,7 @@ unsigned int	ft_strlcat(char *dest, char *src, unsigned int size)
 		j++;
 	}
 	dest_len = j;
-	src_len = ft_strlen(src);
+	src_len = SIZE;
 	if (size == 0 || size <= dest_len)
 		return (src_len + size);
 	while (src [i] != '\0' && i < size - dest_len - 1)
