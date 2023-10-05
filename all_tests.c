@@ -21,9 +21,8 @@ int main(void)
     printf("14.TOLOWER: C becomes c? %c\n", ft_toupper('C'));
     printf("17.STRNCMP: (caio caio|b|a) %d\n", ft_strncmp("caio", "caioba", 7));
     printf("21.ATOI: -12345(string) %d(int)\n", ft_atoi("-12345"));
-    printf("22.CALLOC: -12345(string) %d(int)\n", ft_atoi("-12345"));
+    printf("22.CALLOC: ");
     printf("23.STRDUP: Is it farofa? %s\n", ft_strdup("farofa"));
 
     return (0);
 }
-

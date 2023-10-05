@@ -33,3 +33,4 @@ clean:
 
 all_tests: libft.a all_tests.o
 	$(CC) -o all_tests -L. -lft all_tests.o $(MOD_OBJECTS)
+	
