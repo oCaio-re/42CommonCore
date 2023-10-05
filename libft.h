@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   libft.h                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ocaio-re <ocaio-re@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/10/05 19:17:29 by ocaio-re          #+#    #+#             */
+/*   Updated: 2023/10/05 19:18:35 by ocaio-re         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef LIBFT_H
 # define LIBFT_H
 # include <stdlib.h>
@@ -24,7 +36,7 @@ int	ft_strncmp(char *s1, char *s2, unsigned int n);
 
 
 int	ft_atoi(const char *nptr);
-
+void	*ft_calloc(size_t count, size_t size)
 char    *ft_strdup(char *src);
 
 #endif

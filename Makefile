@@ -21,6 +21,7 @@ MOD_SOURCES = \
 						  ft_strncmp.c \
 						  ft_atoi.c \
 						  ft_strdup.c \
+						  ft_calloc.c \
 
 MOD_OBJECTS = $(MOD_SOURCES:.c=.o)
 
