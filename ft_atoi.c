@@ -6,7 +6,7 @@
 /*   By: ocaio-re <ocaio-re@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/04 13:02:51 by ocaio-re          #+#    #+#             */
-/*   Updated: 2023/10/04 14:30:56 by ocaio-re         ###   ########.fr       */
+/*   Updated: 2023/10/05 18:22:57 by ocaio-re         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,10 @@ int	ft_atoi(const char *nptr)
 	res = 0;
 	i = 0;
 	sin = 1;
-	if (nptr[i] == '-')
+	if (nptr[i] == '-' || nptr[i] == '+')
 	{
-		sin *= -1;
+		if (nptr[i] == '-')
+			sin *= -1;
 		i++;
 	}
 	while (nptr[i])

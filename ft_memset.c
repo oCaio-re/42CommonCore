@@ -6,28 +6,29 @@
 /*   By: ocaio-re <ocaio-re@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/04 12:16:43 by ocaio-re          #+#    #+#             */
-/*   Updated: 2023/10/04 15:47:16 by ocaio-re         ###   ########.fr       */
+/*   Updated: 2023/10/05 19:08:46 by ocaio-re         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string.h>
+#include "libft.h"
 #define SIZE sizeof(*argv[1]) /* / sizeof(char) */
 
-char *ft_memset(char *str, int c, size_t n)
+void	*ft_memset(void *b, int c, size_t len)
 {
-	int	i;
+	char	*p;
 
-	i = 0;
-	while(i < n)
+	p = (char *)b;
+	while (len > 0)
 	{
-		str[i] = c;
-		i++;
+		p[len - 1] = c;
+		len--;
 	}
-	return (str);
+	return (b);
 }
 
-#include <stdio.h>
+/* #include <stdio.h>
 int	main(int argc, char *argv[])
 {
 	printf("%s", ft_memset(argv[1], 'S', SIZE));
-}
+} */

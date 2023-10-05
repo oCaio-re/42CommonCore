@@ -6,11 +6,12 @@
 /*   By: ocaio-re <ocaio-re@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/04 12:23:27 by ocaio-re          #+#    #+#             */
-/*   Updated: 2023/10/04 12:23:28 by ocaio-re         ###   ########.fr       */
+/*   Updated: 2023/10/05 17:49:17 by ocaio-re         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#define SIZE sizeof(src) / sizeof(char)
+#include <stdlib.h>
+#define SIZE sizeof(*src) / sizeof(char)
 
 char    *ft_strdup(char *src)
 {
