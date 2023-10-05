@@ -6,11 +6,11 @@
 /*   By: ocaio-re <ocaio-re@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/04 12:23:24 by ocaio-re          #+#    #+#             */
-/*   Updated: 2023/10/04 12:23:25 by ocaio-re         ###   ########.fr       */
+/*   Updated: 2023/10/05 17:28:33 by ocaio-re         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#define SIZE sizeof(src) / sizeof(char)
+#define SIZE sizeof(*src) / sizeof(char)
 
 unsigned int	ft_strlcat(char *dest, char *src, unsigned int size)
 {

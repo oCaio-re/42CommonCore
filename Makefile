@@ -8,11 +8,11 @@ test: all_tests
 MOD_SOURCES = \
 						  ft_isprint.c \
 						  ft_isdigit.c \
-						  ft_strlcpy.c \
-						  ft_strlen.c \
-						  ft_strlcat.c \
 						  ft_toupper.c \
 						  ft_tolower.c \
+						  ft_atoi.c \
+						  ft_strlen.c\
+						  ft_strlcat.c\
 						  #mod3.c
 
 MOD_OBJECTS = $(MOD_SOURCES:.c=.o)
