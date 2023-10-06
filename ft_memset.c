@@ -6,7 +6,7 @@
 /*   By: caioba <caioba@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/04 12:16:43 by ocaio-re          #+#    #+#             */
-/*   Updated: 2023/10/06 14:57:37 by caioba           ###   ########.fr       */
+/*   Updated: 2023/10/06 15:14:45 by caioba           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,15 @@
 
 void	*ft_memset(void *b, int c, size_t len)
 {
-	char	*p;
+	size_t			i;
 
-	p = (char *)b;
-	while (len > 0)
+	if (!b)
+		return (NULL);
+	i = 0;
+	while (i < len)
 	{
-		p[len - 1] = c;
-		len--;
+		*(unsigned char *)(b + i) = (unsigned char)c;
+		i++;
 	}
 	return (b);
 }

@@ -3,38 +3,30 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ocaio-re <ocaio-re@student.42.fr>          +#+  +:+       +#+        */
+/*   By: caioba <caioba@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/04 12:23:21 by ocaio-re          #+#    #+#             */
-/*   Updated: 2023/10/05 17:59:19 by ocaio-re         ###   ########.fr       */
+/*   Updated: 2023/10/06 15:16:11 by caioba           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#define SIZE sizeof(*src) / sizeof(char)
+#include "libft.h"
 
-unsigned int	ft_strlcpy(char *dest, char *src, unsigned int size)
+size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 {
-	unsigned int	i;
-	unsigned int	x;
+	size_t	i;
 
-	x = SIZE;
 	i = 0;
-	if (size != 0)
+	if (size > 0)
 	{
-		while (src [i] != '\0' && i < size - 1)
+		while (src[i] && i < (size - 1))
 		{
-			dest[i] = src[i];
+			dst[i] = src[i];
 			i++;
 		}
-		dest[i] = '\0';
+		dst[i] = 0;
 	}
-	return (x);
+	while (src[i])
+		i++;
+	return (i);
 }
-
-/* #include <stdio.h>
-int	main()
-{
-	char src[] = "World!";
-	char dest[] = "Hello ";
-	printf("%d | %s", ft_strlcpy(dest, src, 10), dest);
-} */

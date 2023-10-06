@@ -3,38 +3,39 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ocaio-re <ocaio-re@student.42.fr>          +#+  +:+       +#+        */
+/*   By: caioba <caioba@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/04 12:23:24 by ocaio-re          #+#    #+#             */
-/*   Updated: 2023/10/05 17:28:33 by ocaio-re         ###   ########.fr       */
+/*   Updated: 2023/10/06 15:16:48 by caioba           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#define SIZE sizeof(*src) / sizeof(char)
+#include <stdlib.h>
+#include "libft.h"
 
-unsigned int	ft_strlcat(char *dest, char *src, unsigned int size)
+size_t
+	ft_strlcat(char *dst, const char *src, size_t size)
 {
-	unsigned int	i;
-	unsigned int	j;
-	unsigned int	dest_len;
-	unsigned int	src_len;
+	size_t	i;
+	size_t	j;
+	size_t	dest_length;
+	size_t	src_length;
 
+	src_length = ft_strlen(src);
+	dest_length = ft_strlen(dst);
+	j = dest_length;
 	i = 0;
-	j = 0;
-	while (dest[j] != '\0')
+	if (dest_length < size - 1 && size > 0)
 	{
-		j++;
+		while (src[i] && dest_length + i < size - 1)
+		{
+			dst[j] = src[i];
+			j++;
+			i++;
+		}
+		dst[j] = 0;
 	}
-	dest_len = j;
-	src_len = SIZE;
-	if (size == 0 || size <= dest_len)
-		return (src_len + size);
-	while (src [i] != '\0' && i < size - dest_len - 1)
-	{
-		dest[j] = src[i];
-		i++;
-		j++;
-	}
-	dest[j] = '\0';
-	return (dest_len + src_len);
+	if (dest_length >= size)
+		dest_length = size;
+	return (dest_length + src_length);
 }

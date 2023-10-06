@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ocaio-re <ocaio-re@student.42.fr>          +#+  +:+       +#+        */
+/*   By: caioba <caioba@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/04 12:23:16 by ocaio-re          #+#    #+#             */
-/*   Updated: 2023/10/04 12:23:18 by ocaio-re         ###   ########.fr       */
+/*   Updated: 2023/10/06 15:13:22 by caioba           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strlen(char *str)
+int	ft_strlen(const char *str)
 {
 	int	i;
 
