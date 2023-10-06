@@ -8,10 +8,10 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": false,
-      "cwd": "/home/caioba/Documents/CommonCore42",
-      "program": "/home/caioba/Documents/CommonCore42/build/Debug/outDebug",
+      "cwd": "/home/caioba/Documents/libft",
+      "program": "/home/caioba/Documents/libft/build/Debug/outDebug",
       "MIMode": "gdb",
-      "miDebuggerPath": "gdb",
+      "miDebuggerPath": "/usr/bin/gdb",
       "setupCommands": [
         {
           "description": "Enable pretty-printing for gdb",

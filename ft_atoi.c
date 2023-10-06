@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ocaio-re <ocaio-re@student.42.fr>          +#+  +:+       +#+        */
+/*   By: caioba <caioba@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/04 13:02:51 by ocaio-re          #+#    #+#             */
-/*   Updated: 2023/10/05 18:22:57 by ocaio-re         ###   ########.fr       */
+/*   Updated: 2023/10/06 15:09:53 by caioba           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,13 +19,16 @@ int	ft_atoi(const char *nptr)
 	res = 0;
 	i = 0;
 	sin = 1;
+	while (nptr[i] == '\t' || nptr[i] == '\n' || nptr[i] == '\v'
+		|| nptr[i] == '\f' || nptr[i] == '\r' || nptr[i] == ' ')
+		i++;
 	if (nptr[i] == '-' || nptr[i] == '+')
 	{
 		if (nptr[i] == '-')
 			sin *= -1;
 		i++;
 	}
-	while (nptr[i])
+	while (nptr[i] >= '0' && nptr[i] <= '9')
 	{
 		res *= 10;
 		res += nptr[i] - '0';

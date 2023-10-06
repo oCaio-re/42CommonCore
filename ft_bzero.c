@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ocaio-re <ocaio-re@student.42.fr>          +#+  +:+       +#+        */
+/*   By: caioba <caioba@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/05 19:17:14 by ocaio-re          #+#    #+#             */
-/*   Updated: 2023/10/05 19:17:17 by ocaio-re         ###   ########.fr       */
+/*   Updated: 2023/10/06 14:53:22 by caioba           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
+//#include <string.h>
 #include "libft.h"
 
 void	ft_bzero(void *s, size_t n)

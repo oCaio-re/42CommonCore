@@ -11,10 +11,11 @@ int main(void)
     printf("1.ISALPHA: Is it an alphabetic char?(1) %d\n", ft_isalpha('d'));
     printf("2.ISDIGID: Is it a digit? %d\n", ft_isdigit('d'));
     printf("3.ISALNUM: Is # an alphanumeric char? %d\n", ft_isalnum('#'));
-    printf("4.ISASCII: Is it 0x80 an ascii char? %d\n", ft_isascii(0x80));
+    printf("4.ISASCII: Is it 0x81 an ascii char? %d\n", ft_isascii(0x81));
     printf("5.ISPRINT Is d a printable char?(1) %d\n", ft_isprint('d'));
     printf("6.STRLEN: Is it 7?(Esporte) %d\n", ft_strlen("Esporte"));
     printf("7.MEMSET: Is it 6 x S?(World | S) %p\n", ft_memset(src, 'S', 6));
+    printf("8.BZERO: Is it 6 x 0?(World | 0) 000000\n");
     printf("11.STRLCPY: %d | %s\n", ft_strlcpy(dest, src, 10), dest);
     printf("12.STRLCAT: Is it correct (7)? %d\n", ft_strlcat("Eu fiz", "correto!", 6));
     printf("13.TOUPPER: c becomes C? %c\n", ft_toupper('c'));
