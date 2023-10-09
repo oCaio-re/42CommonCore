@@ -6,26 +6,22 @@
 /*   By: ocaio-re <ocaio-re@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/04 13:01:29 by ocaio-re          #+#    #+#             */
-/*   Updated: 2023/10/04 15:35:29 by ocaio-re         ###   ########.fr       */
+/*   Updated: 2023/10/09 17:11:49 by ocaio-re         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strncmp(char *s1, char *s2, unsigned int n)
-{
-	unsigned int		i;
+#include "libft.h"
 
-	i = 0;
-	while ((s1[i] != '\0' || s2[i] != '\0') && i < n)
+int	ft_strncmp(const char *s1, const char *s2, size_t n)
+{
+	unsigned int	z;
+
+	z = 0;
+	while ((s1[z] != '\0' || s2[z] != '\0') && n--)
 	{
-		if (s1[i] > s2[i])
-		{
-			return (1);
-		}
-		else if (s1[i] < s2[i])
-		{
-			return (-1);
-		}
-		i++;
+		if (s1[z] != s2[z])
+			return ((unsigned char)s1[z] - (unsigned char)s2[z]);
+		z++;
 	}
 	return (0);
 }
