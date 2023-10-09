@@ -6,7 +6,7 @@
 /*   By: ocaio-re <ocaio-re@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/06 16:00:25 by caioba            #+#    #+#             */
-/*   Updated: 2023/10/09 17:50:56 by ocaio-re         ###   ########.fr       */
+/*   Updated: 2023/10/09 18:08:05 by ocaio-re         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,15 @@
 
 void	*ft_memcpy(void *dst, const void *src, size_t n)
 {
-	unsigned char	*altdst;
-	unsigned char	*altsrc;
+	size_t	i;
 
-	altdst = (unsigned char *)dst;
-	altsrc = (unsigned char *)src;
-	while (n > 0)
+	if (!dst && !src)
+		return (0);
+	i = 0;
+	while (i < n)
 	{
-		*altdst = *altsrc;
-		altdst++;
-		altsrc++;
-		n--;
+		((unsigned char *)dst)[i] = ((unsigned char *)src)[i];
+		i++;
 	}
 	return (dst);
 }
