@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: caioba <caioba@student.42.fr>              +#+  +:+       +#+        */
+/*   By: ocaio-re <ocaio-re@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/06 16:00:25 by caioba            #+#    #+#             */
-/*   Updated: 2023/10/06 21:26:10 by caioba           ###   ########.fr       */
+/*   Updated: 2023/10/09 10:14:11 by ocaio-re         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,11 +27,11 @@ void    *ft_memcpy(void *dst, const void *src, size_t n)
 	return (dst);
 }
 
-#include <stdio.h>
+/* #include <stdio.h>
 int main(void)
 {
     char src[10] = "metallica";
     char dest[10] = "tinhaalgo";
     ft_memcpy(dest, src, 9);
     printf("%s", dest);
-}
+} */

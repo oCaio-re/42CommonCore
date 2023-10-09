@@ -16,7 +16,7 @@ int main(void)
     printf("6.STRLEN: Is it 7?(Esporte) %d\n", ft_strlen("Esporte"));
     printf("7.MEMSET: Is it 6 x S?(World | S) %p\n", ft_memset(src, 'S', 6));
     printf("8.BZERO: Is it 6 x 0?(World | 0) 000000\n");
-    printf("9.MEMCPY: Is it 6 x S?(World | S) %s\n", ft_memcpy(src, dest));
+    printf("9.MEMCPY: Is it 6 x S?(World | S) %s\n", ft_memcpy(src, dest, 6));
     printf("11.STRLCPY: %d | %s\n", ft_strlcpy(dest, src, 10), dest);
     printf("12.STRLCAT: Is it correct (7)? %d\n", ft_strlcat("Eu fiz", "correto!", 6));
     printf("13.TOUPPER: c becomes C? %c\n", ft_toupper('c'));
