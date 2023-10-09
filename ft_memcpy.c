@@ -6,13 +6,13 @@
 /*   By: ocaio-re <ocaio-re@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/06 16:00:25 by caioba            #+#    #+#             */
-/*   Updated: 2023/10/09 11:06:21 by ocaio-re         ###   ########.fr       */
+/*   Updated: 2023/10/09 14:55:20 by ocaio-re         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void    *ft_memcpy(void *dst, const void *src, size_t n)
+void	*ft_memcpy(void *dst, const void *src, size_t n)
 {
 	size_t	i;
 
@@ -21,7 +21,7 @@ void    *ft_memcpy(void *dst, const void *src, size_t n)
 	i = 0;
 	while (i < n)
 	{
-		*(char*)(dst + i) = *(char*)(src + i);
+		*(char *)(dst + i) = *(char *)(src + i);
 		i++;
 	}
 	return (dst);

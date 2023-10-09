@@ -6,18 +6,18 @@
 /*   By: ocaio-re <ocaio-re@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/04 12:09:51 by ocaio-re          #+#    #+#             */
-/*   Updated: 2023/10/04 12:09:52 by ocaio-re         ###   ########.fr       */
+/*   Updated: 2023/10/09 14:54:16 by ocaio-re         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_isdigit(int c)
+int	ft_isdigit(int c)
 {
-    if (c >= '0' && c <= '9')
-    {
-        return (1);
-    }
-    else
-    {
-        return (0);
-    }
+	if (c >= '0' && c <= '9')
+	{
+		return (1);
+	}
+	else
+	{
+		return (0);
+	}
 }

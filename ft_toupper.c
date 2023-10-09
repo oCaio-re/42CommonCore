@@ -6,18 +6,18 @@
 /*   By: ocaio-re <ocaio-re@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/04 12:35:33 by ocaio-re          #+#    #+#             */
-/*   Updated: 2023/10/04 15:32:56 by ocaio-re         ###   ########.fr       */
+/*   Updated: 2023/10/09 15:07:37 by ocaio-re         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char    ft_toupper(char c)
+char	ft_toupper(char c)
 {
-    if(c >= 'a' && c <= 'z')
-    {
-        return(c -= 32);
-    }
-    else
-        return(c);    
+	if (c >= 'a' && c <= 'z')
+	{
+		return (c -= 32);
+	}
+	else
+		return (c);
 }
 
 /* #include <stdio.h>

@@ -6,30 +6,29 @@
 /*   By: ocaio-re <ocaio-re@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/04 12:23:27 by ocaio-re          #+#    #+#             */
-/*   Updated: 2023/10/05 17:49:17 by ocaio-re         ###   ########.fr       */
+/*   Updated: 2023/10/09 15:01:38 by ocaio-re         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-#define SIZE sizeof(*src) / sizeof(char)
+#include "libft.h"
 
-char    *ft_strdup(char *src)
+char	*ft_strdup(const char *s1)
 {
-        int             index;
-        char    *dest;
-        char    *d;
+	size_t		i;
+	char		*dest;
 
-        index = 0;
-        d = ((dest = (char *)malloc(SIZE * sizeof(char) + 1)));
-        if (!d)
-        {
-                return (0);
-        }
-        while (src[index])
-        {
-                dest[index] = src[index];
-                index++;
-        }
-        dest[index] = '\0';
-        return (dest);
+	i = 0;
+	while (s1[i])
+		i++;
+	dest = (char *)malloc(sizeof(char) * (i + 1));
+	if (!dest)
+		return (NULL);
+	i = 0;
+	while (s1[i] != '\0')
+	{
+		dest[i] = s1[i];
+		i++;
+	}
+	dest[i] = '\0';
+	return (dest);
 }
