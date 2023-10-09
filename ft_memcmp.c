@@ -6,7 +6,7 @@
 /*   By: ocaio-re <ocaio-re@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/06 21:32:13 by caioba            #+#    #+#             */
-/*   Updated: 2023/10/09 10:35:46 by ocaio-re         ###   ########.fr       */
+/*   Updated: 2023/10/09 11:06:47 by ocaio-re         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,10 +30,10 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 	return (0);
 }
 
-#include <stdio.h>
+/* #include <stdio.h>
 int main(void)
 {
 	char word[] = "caio";
 	char word1[] = "caioba";
 	printf("%d", ft_memcmp(word, word1, 4));
-}
+} */

@@ -6,7 +6,7 @@
 /*   By: ocaio-re <ocaio-re@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/06 16:00:25 by caioba            #+#    #+#             */
-/*   Updated: 2023/10/09 10:23:21 by ocaio-re         ###   ########.fr       */
+/*   Updated: 2023/10/09 11:06:21 by ocaio-re         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,11 +27,11 @@ void    *ft_memcpy(void *dst, const void *src, size_t n)
 	return (dst);
 }
 
- #include <stdio.h>
+/* #include <stdio.h>
 int main(void)
 {
     char src[10] = "metallica";
     char dest[10] = "tinhaalgo";
     ft_memcpy(dest, src, sizeof(dest));
     printf("dest:%s\n", dest);
-} 
+} */ 
