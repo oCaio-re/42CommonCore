@@ -6,7 +6,7 @@
 /*   By: ocaio-re <ocaio-re@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/06 16:00:25 by caioba            #+#    #+#             */
-/*   Updated: 2023/10/09 14:55:20 by ocaio-re         ###   ########.fr       */
+/*   Updated: 2023/10/09 17:50:56 by ocaio-re         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,24 +14,17 @@
 
 void	*ft_memcpy(void *dst, const void *src, size_t n)
 {
-	size_t	i;
+	unsigned char	*altdst;
+	unsigned char	*altsrc;
 
-	if (!dst)
-		return (NULL);
-	i = 0;
-	while (i < n)
+	altdst = (unsigned char *)dst;
+	altsrc = (unsigned char *)src;
+	while (n > 0)
 	{
-		*(char *)(dst + i) = *(char *)(src + i);
-		i++;
+		*altdst = *altsrc;
+		altdst++;
+		altsrc++;
+		n--;
 	}
 	return (dst);
 }
-
-/* #include <stdio.h>
-int main(void)
-{
-    char src[10] = "metallica";
-    char dest[10] = "tinhaalgo";
-    ft_memcpy(dest, src, sizeof(dest));
-    printf("dest:%s\n", dest);
-} */ 

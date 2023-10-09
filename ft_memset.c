@@ -6,24 +6,22 @@
 /*   By: ocaio-re <ocaio-re@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/04 12:16:43 by ocaio-re          #+#    #+#             */
-/*   Updated: 2023/10/09 14:55:47 by ocaio-re         ###   ########.fr       */
+/*   Updated: 2023/10/09 17:43:59 by ocaio-re         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
 #include "libft.h"
 
 void	*ft_memset(void *b, int c, size_t len)
 {
-	size_t			i;
+	unsigned char		*placeholder;
 
-	if (!b)
-		return (NULL);
-	i = 0;
-	while (i < len)
+	placeholder = (unsigned char *)b;
+	while (len > 0)
 	{
-		*(unsigned char *)(b + i) = (unsigned char)c;
-		i++;
+		*placeholder = (unsigned char)c;
+		placeholder++;
+		len--;
 	}
 	return (b);
 }
