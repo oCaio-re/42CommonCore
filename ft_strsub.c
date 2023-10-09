@@ -1,20 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isascii.c                                       :+:      :+:    :+:   */
+/*   ft_strsub.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ocaio-re <ocaio-re@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/03 17:53:28 by ocaio-re          #+#    #+#             */
-/*   Updated: 2023/10/09 16:44:33 by ocaio-re         ###   ########.fr       */
+/*   Created: 2023/10/09 15:52:47 by ocaio-re          #+#    #+#             */
+/*   Updated: 2023/10/09 16:49:47 by ocaio-re         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isascii(int c)
+char	*ft_strsub(char const *s, unsigned int start, size_t len)
 {
-	if (0 <= c && c <= 127)
-		return (1);
-	return (0);
+	unsigned int	i;
+	char			*blank;
+
+	blank = "";
+	i = 0;
+	if (!s)
+		return (NULL);
+	ft_memset(blank, '\0', len);
+	if (!blank)
+		return (NULL);
+	if (s)
+	{
+		while (i != len)
+		{
+			blank[i] = s[start + i];
+			i++;
+		}
+	}
+	blank[len] = '\0';
+	return (blank);
 }

@@ -6,7 +6,7 @@
 /*   By: ocaio-re <ocaio-re@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/05 19:17:29 by ocaio-re          #+#    #+#             */
-/*   Updated: 2023/10/09 15:49:39 by ocaio-re         ###   ########.fr       */
+/*   Updated: 2023/10/09 16:06:14 by ocaio-re         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,5 +38,6 @@ char	*ft_strnstr(const char *big, const char *little, size_t len);
 int		ft_atoi(const char *nptr);
 void	*ft_calloc(size_t count, size_t size);
 char	*ft_strdup(const char *s1);
+char	*ft_strsub(char const *s, unsigned int start, size_t len);
 
 #endif

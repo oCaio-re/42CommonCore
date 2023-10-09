@@ -1,9 +1,5 @@
-CFLAGS = -Wall -Wextra -Werror
 
-all: all_tests
-
-test: all_tests
-	./all_tests
+NAME = libft.a
 
 MOD_SOURCES = \
 						  ft_isalpha.c \
@@ -29,15 +25,27 @@ MOD_SOURCES = \
 						  ft_atoi.c \
 						  ft_strdup.c \
 						  ft_calloc.c \
+						  ft_strsub.c \
 
 MOD_OBJECTS = $(MOD_SOURCES:.c=.o)
 
-libft.a: $(MOD_OBJECTS)
-	ar -r libft.a $(MOD_OBJECTS)
+FLAGS = -Wall -Wextra -Werror
+
+CC = gcc
+
+HEADER = libft.h
+
+all: $(NAME)
+
+$(NAME):
+	$(CC) $(FLAGS) -c $(MOD_SOURCES)
+	ar rc $(NAME) $(MOD_OBJECTS)
+	ranlib $(NAME)
 
 clean:
-	rm -fv *.o *.a all_tests
+	rm -rf $(MOD_OBJECTS)
 
-all_tests: libft.a all_tests.o
-	$(CC) -o all_tests -L. -lft all_tests.o $(MOD_OBJECTS)
-	
+fclean: clean
+	rm -f $(NAME)
+
+re: fclean all
