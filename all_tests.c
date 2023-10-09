@@ -22,11 +22,12 @@ int main(void)
     printf("12.STRLCAT: Is it correct (7)? %zu\n", ft_strlcat("Eu fiz", "correto!", 6));
     printf("13.TOUPPER: c becomes C? %c\n", ft_toupper('c'));
     printf("14.TOLOWER: C becomes c? %c\n", ft_toupper('C'));
+    printf("15.STRCHR: after @? %s\n", ft_strchr("xcaio2@gmail.com", '@'));
     printf("17.STRNCMP: (caio caio|b|a) %d\n", ft_strncmp("caio", "caioba", 7));
     printf("18.MEMCHR: ***test commented within the function***\n");
     printf("19.MEMCMP: Is it less than 0? %d", ft_memcmp(src, dest, 3));
     printf("21.ATOI: -12345(string) %d(int)\n", ft_atoi("-12345"));
-    printf("22.CALLOC: ");
+    printf("22.CALLOC: \n");
     printf("23.STRDUP: Is it farofa? %s\n", ft_strdup("farofa"));
 
     return (0);
