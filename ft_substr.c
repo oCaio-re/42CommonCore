@@ -1,38 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strsub.c                                        :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: caioba <caioba@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/09 15:52:47 by ocaio-re          #+#    #+#             */
-/*   Updated: 2023/10/10 12:38:15 by caioba           ###   ########.fr       */
+/*   Created: 2023/10/10 12:41:36 by caioba            #+#    #+#             */
+/*   Updated: 2023/10/10 12:41:41 by caioba           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strsub(char const *s, unsigned int start, size_t len)
+char
+	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	unsigned int	i;
-	char			*blank;
+	size_t	i;
+	size_t	j;
+	char	*str;
 
-	blank = "";
+	str = (char *)malloc(sizeof(*s) * (len + 1));
+	if (!str)
+		return (NULL);
 	i = 0;
-	if (!s)
-		return (NULL);
-	ft_memset(blank, '\0', len);
-	if (!blank)
-		return (NULL);
-	if (s)
+	j = 0;
+	while (s[i])
 	{
-		while (i != len)
+		if (i >= start && j < len)
 		{
-			blank[i] = s[start + i];
-			i++;
+			str[j] = s[i];
+			j++;
 		}
+		i++;
 	}
-	blank[len] = '\0';
-	return (blank);
-
+	str[j] = 0;
+	return (str);
 }
