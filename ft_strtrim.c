@@ -6,43 +6,41 @@
 /*   By: ocaio-re <ocaio-re@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/12 18:38:45 by ocaio-re          #+#    #+#             */
-/*   Updated: 2023/10/12 19:00:49 by ocaio-re         ###   ########.fr       */
+/*   Updated: 2023/10/12 19:34:23 by ocaio-re         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	in(const char *str, char c)
+static int	ft_isset(char c, const char *set)
 {
-	while (*str && c != *str)
-		str++;
-	return (c == *str);
+	while (*set)
+		if (c == *set++)
+			return (1);
+	return (0);
 }
 
-char	*ft_strtrim(char const *s1, char const *set)
+char	*ft_strtrim(const char *s1, const char *set)
 {
-	size_t	first;
-	size_t	last;
+	char	*ret;
+	char	*start;
+	char	*end;
 
-	if (!s1)
+	if (!s1 || !set)
 		return (0);
-	if (!set)
-		return (0);
-	first = 0;
-	last = ft_strlen(s1);
-	while (in(set, s1[first]))
-		first++;
-	if (first == last)
-		return (ft_strdup(""));
-	while (in(set, s1[last - 1]))
-		last--;
-	return (ft_substr(s1, first, last - first));
+	start = (char *)s1;
+	end = start + ft_strlen(s1);
+	while (*start && ft_isset(*start, set))
+		++start;
+	while (start < end && ft_isset(*(end - 1), set))
+		--end;
+	ret = ft_substr(start, 0, end - start);
+	return (ret);
 }
 
-/* 
-#include <stdio.h>
+/* #include <stdio.h>
 int	main(void)
 {
-	char *test = "MarceloMa";
-	printf("%s\n", strtrim(test, "Ma"));
-} */
+	char *test = "CaioCa";
+	printf("%s\n", ft_strtrim(test, "Ca"));
+} */ 
