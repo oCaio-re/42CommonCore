@@ -27,6 +27,8 @@ MOD_SOURCES = \
 						  ft_calloc.c \
 						  ft_strsub.c \
 						  ft_substr.c \
+						  ft_strjoin.c \
+						  ft_strtrim.c \
 
 MOD_OBJECTS = $(MOD_SOURCES:.c=.o)
 
