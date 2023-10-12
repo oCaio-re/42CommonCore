@@ -6,7 +6,7 @@
 /*   By: caioba <caioba@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/09 15:52:47 by ocaio-re          #+#    #+#             */
-/*   Updated: 2023/10/10 12:38:15 by caioba           ###   ########.fr       */
+/*   Updated: 2023/10/12 14:05:07 by caioba           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,5 +34,4 @@ char	*ft_strsub(char const *s, unsigned int start, size_t len)
 	}
 	blank[len] = '\0';
 	return (blank);
-
 }
