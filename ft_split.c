@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ocaio-re <ocaio-re@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ocaio-re <ocaio-re@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/12 20:12:32 by ocaio-re          #+#    #+#             */
-/*   Updated: 2023/10/12 20:19:48 by ocaio-re         ###   ########.fr       */
+/*   Updated: 2023/10/13 14:12:59 by ocaio-re         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,8 +71,7 @@ char	*ft_split(int size, char **strs, char *sep)
 	return (string);
 }
 
-
-#include <stdio.h>
+/* #include <stdio.h>
 int	main(void)
 {
 	char	**strs;
@@ -92,4 +91,4 @@ int	main(void)
 	result = ft_split(size, strs, separator);
 	printf("%s\n", result);
 	free(result);
-} 
+} */ 
