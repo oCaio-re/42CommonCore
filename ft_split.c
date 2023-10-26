@@ -43,7 +43,7 @@ int	ft_compute_final_length(char **strings, int size, int sep_length)
 	return (final_length);
 }
 
-char	*ft_split(int size, char **strs, char *sep)
+char	**ft_split(int size, char **strs, char *sep)
 {
 	int		full_length;
 	int		index;
