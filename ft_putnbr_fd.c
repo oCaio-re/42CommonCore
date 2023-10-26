@@ -3,27 +3,38 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ocaio-re <ocaio-re@student.42porto.com>    +#+  +:+       +#+        */
+/*   By: ocaio-re <ocaio-re@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/23 14:20:27 by ocaio-re          #+#    #+#             */
-/*   Updated: 2023/10/23 14:20:29 by ocaio-re         ###   ########.fr       */
+/*   Updated: 2023/10/26 02:03:06 by ocaio-re         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putnbr_fd(int nb, int fd)
+void	ft_putnbr_fd(int n, int fd)
 {
-	unsigned int	nbr;
+	char	toprint;
 
-	if (nb < 0)
+	if (n == -2147483648)
 	{
-		ft_putchar_fd('-', fd);
-		nbr = (unsigned int)(nb * -1);
+		write(fd, "-2147483648", 11);
+		return ;
+	}
+	if (n < 0)
+	{
+		write(fd, "-", 1);
+		n *= -1;
+	}
+	if (n >= 10)
+	{
+		ft_putnbr_fd(n / 10, fd);
+		toprint = n % 10 + 48;
+		write(fd, &toprint, 1);
 	}
 	else
-		nbr = (unsigned int)nb;
-	if (nbr >= 10)
-		ft_putnbr_fd(nbr / 10, fd);
-	ft_putchar_fd((char)(nbr % 10 + 48), fd);
+	{
+		toprint = n + 48;
+		write(fd, &toprint, 1);
+	}
 }

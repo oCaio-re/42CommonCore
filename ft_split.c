@@ -3,72 +3,123 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ocaio-re <ocaio-re@student.42porto.com>    +#+  +:+       +#+        */
+/*   By: ocaio-re <ocaio-re@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/12 20:12:32 by ocaio-re          #+#    #+#             */
-/*   Updated: 2023/10/13 14:12:59 by ocaio-re         ###   ########.fr       */
+/*   Updated: 2023/10/26 01:57:57 by ocaio-re         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strcpy(char *dest, char *src)
+static void	free_ret(char **ret)
 {
-	int	index;
+	int	i;
 
-	index = 0;
-	while (src[index] != '\0')
-	{
-		dest[index] = src[index];
-		index++;
-	}
-	dest[index] = '\0';
-	return (dest);
+	i = 0;
+	while (ret[i])
+		free(ret[i++]);
+	free(ret);
 }
 
-int	ft_compute_final_length(char **strings, int size, int sep_length)
+static void	fill_strings(char **strings, const char *s, char c)
 {
-	int	final_length;
-	int	index;
+	int	i;
+	int	k;
+	int	j;
 
-	final_length = 0;
-	index = 0;
-	while (index < size)
+	i = 0;
+	j = 0;
+	while (s[i])
 	{
-		final_length += ft_strlen(strings[index]);
-		final_length += sep_length;
-		index++;
-	}
-	final_length -= sep_length;
-	return (final_length);
-}
-
-char	**ft_split(int size, char **strs, char *sep)
-{
-	int		full_length;
-	int		index;
-	char	*string;
-	char	*d;
-
-	if (size == 0)
-		return ((char *)malloc(sizeof(char)));
-	full_length = ft_compute_final_length(strs, size, ft_strlen(sep));
-	string = (char *)malloc((full_length + 1) * sizeof(char));
-	d = string;
-	index = 0;
-	while (index < size)
-	{
-		ft_strcpy(d, strs[index]);
-		d += ft_strlen(strs[index]);
-		if (index < size - 1)
+		k = 0;
+		while (s[i] != c && s[i])
 		{
-			ft_strcpy(d, sep);
-			d += ft_strlen(sep);
+			strings[j][k] = s[i];
+			k++;
+			i++;
 		}
-		index++;
+		if (k != 0)
+		{
+			strings[j][k] = '\0';
+			j++;
+			continue ;
+		}
+		i++;
 	}
-	*d = '\0';
-	return (string);
+	strings[j] = NULL;
+}
+
+static int	check_splits(char const *s, char c)
+{
+	int	splits;
+	int	i;
+
+	i = 0;
+	splits = 0;
+	while (s[i])
+	{
+		if (s[i] != c)
+		{
+			while (s[i] != c && s[i])
+				i++;
+			splits++;
+			continue ;
+		}
+		i++;
+	}
+	return (splits);
+}
+
+static void	make_strings(char **ret, const char *s, char c)
+{
+	size_t	i;
+	int		j;
+	int		k;
+
+	k = 0;
+	i = 0;
+	while (s[i])
+	{
+		j = 0;
+		while (s[i] != c && s[i])
+		{
+			j++;
+			i++;
+		}
+		if (j > 0)
+		{
+			ret[k] = malloc(j + 1);
+			if (ret[k] == NULL)
+				return ;
+			k++;
+			continue ;
+		}
+		i++;
+	}
+}
+
+char	**ft_split(char const *s, char c)
+{
+	char	**ret;
+	int		i;
+
+	i = 0;
+	ret = (char **) malloc(sizeof(char *) * (check_splits(s, c) + 1));
+	if (ret == NULL)
+		return (NULL);
+	make_strings(ret, s, c);
+	while (i < check_splits(s, c))
+	{
+		if (ret[i] == NULL)
+		{
+			free_ret(ret);
+			return (NULL);
+		}
+		i++;
+	}
+	fill_strings(ret, s, c);
+	return (ret);
 }
 
 /* #include <stdio.h>
